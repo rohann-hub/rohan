@@ -1,19 +1,10 @@
 # 1. write a program to accept a number from user and determine if it is a int,float,string . describe data type
 
-user_input = input("Enter a value: ")
-
-if user_input.isdigit():
-    print("The entered value is of type: Integer")
-else:
-   
-    try:  // Try to convert the input to a float
-        float(user_input)
-        print("The entered value is of type: Float")
-    except ValueError:  // If conversion to float fails, it's a string
-               print("The entered value is of type: String")
+input_value=input("enter a value")
+print(type(input_value)
 
 
-	# 2. create a  list of 10 random int to find the max min , avg value of the list in python .
+# 2. create a  list of 10 random int to find the max min , avg value of the list in python .
 	
 	num=int(input("enter a number : "))
 	arr=[]
@@ -27,14 +18,19 @@ else:
         print("avg value of number is: ", avg)
 
 
-	# 3. write a program in python  to convert to  string into a list.
-	
-	l=[]
-	for a in range(1,4):
-	    n=input("enter the value"+str(a)+": ")  
-	    l.append(n)
-	print(l)
 
+# 3. write a program in python  to convert to  string into a list.
+	
+string_list = ["42", "not_a_number", "58", "100", "abc", "123"]
+integer_list =[]
+for string in string_list:
+try:
+integer = int(string)
+            integer_list.append(integer)
+except:
+	print("invalid Value: " , string)
+	print(integer_list)
+	
 
 # 4. function take argument and returns its data type
 
@@ -46,6 +42,34 @@ else:
 	print(get_datatype("Hello"))   
 	print(get_datatype([1, 2, 3]))  
 	print(get_datatype(None))
-	
+
+# 5. write a program to check if a given variable is true ,false or none.handle these cases and print approptiate messages
+
+def check_variable(var):
+    if var is True:
+        print("The variable is True.")
+    elif var is False:
+        print("The variable is False.")
+    elif var is None:
+        print("The variable is None.")
+    else:
+        print("The variable is neither True, False, nor None.")
+
+check_variable(True)
+check_variable(False)
+check_variable(None)
+check_variable(42)
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
