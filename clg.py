@@ -7,14 +7,14 @@ print(type(input_value)
 # 2. create a  list of 10 random int to find the max min , avg value of the list in python .
 	
 	num=int(input("enter a number : "))
-	arr=[]
+	r=[]
 	for n in range(num):
 	    number=int(input("enter a value of number: "))
-	    arr.append(number)
-	    print(arr)
-	    avg=sum(arr)/len(arr)
-	print("max value of number is :", max(arr))
-	print("min value of number is: ", min(arr))
+	    r.append(number)
+	    print(r)
+	    avg=sum(r)/len(r)
+	print("max value of number is :", max(r))
+	print("min value of number is: ", min(r))
         print("avg value of number is: ", avg)
 
 
