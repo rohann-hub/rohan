@@ -35,13 +35,14 @@ except:
 # 4. function take argument and returns its data type
 
 	def get_datatype(value):
-	    return type(value).__name__
+	    return type(value)
 	
 	print(get_datatype(10))         
 	print(get_datatype(3.14))       
 	print(get_datatype("Hello"))   
 	print(get_datatype([1, 2, 3]))  
 	print(get_datatype(None))
+	print(get_datatype(1,5,8)) 
 
 # 5. write a program to check if a given variable is true ,false or none.handle these cases and print approptiate messages
 
