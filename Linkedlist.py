@@ -21,9 +21,9 @@ class SingleLinkedList:
 L = SingleLinkedList()
 n1 = Node(10)
 L.head = n1
-n2 = Node(2)
+n2 = Node(20)
 n1.next = n2
-n3 = Node(3)
+n3 = Node(30)
 n2.next = n3
 n4 = Node(40)
 n3.next = n4
