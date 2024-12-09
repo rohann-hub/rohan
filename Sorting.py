@@ -63,7 +63,7 @@ def partition(arr , low , high):
     arr[low],arr[j] = arr[j],arr[low]
     return j
 
-array = [ 5,8,1,2,6,3,9]
+array = [int(x) for x in input("Enter a number :").split()]
 sorted_array = quick_sort(array , 0 , len(array) - 1)
 print("sorted elements are: " , sorted_array)
 
