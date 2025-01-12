@@ -67,34 +67,30 @@ array = [int(x) for x in input("Enter a number :").split()]
 sorted_array = quick_sort(array , 0 , len(array) - 1)
 print("sorted elements are: " , sorted_array)
 
-
-
-def quick_sort(arr, low, high):
-    if low < high:
-        pivot = partition(arr, low, high)
-        quick_sort(arr, low, pivot - 1)
-        quick_sort(arr, pivot + 1, high)
-    return arr
-
-def partition(arr, low, high):
-    p = arr[low]
-    i = low + 1
-    j = high
-    while True:
-        while i <= j and arr[i] <= p:
-            i += 1
-        while i <= j and arr[j] >= p:
-            j -= 1
-        if i < j:
-            arr[i], arr[j] = arr[j], arr[i]
-        else:
-            break
-    arr[low], arr[j] = arr[j], arr[low]
-    return j
-
+###   OR   ###
 array = [10, 90, 50, 60, 98, 80, 101]
 sorted_array = quick_sort(array, 0, len(array) - 1)
 print("After sorting:", sorted_array)
+
+
+##insertiin sort
+def insertion_sort(arr):
+    # Traverse from 1 to len(arr)
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        # Move elements of arr[0..i-1], that are greater than key, to one position ahead
+        # of their current position
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+
+arr = [12, 11, 13, 5, 6]
+print("Original array:", arr)
+insertion_sort(arr)
+print("Sorted array:", arr)
 
 
 
