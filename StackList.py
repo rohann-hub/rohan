@@ -137,6 +137,9 @@ stack.display()
 stack.push(40)
 stack.push(50)
 stack.push(60) 
+
+stack.display()
+
 print("Top item is:", stack.peek())
 
 print("Is stack empty?", stack.is_empty())  
