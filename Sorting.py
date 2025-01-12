@@ -67,7 +67,7 @@ array = [int(x) for x in input("Enter a number :").split()]
 sorted_array = quick_sort(array , 0 , len(array) - 1)
 print("sorted elements are: " , sorted_array)
 
-###   OR   ###
+###    OR   ###
 array = [10, 90, 50, 60, 98, 80, 101]
 sorted_array = quick_sort(array, 0, len(array) - 1)
 print("After sorting:", sorted_array)
