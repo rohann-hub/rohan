@@ -71,4 +71,75 @@ while True:
     else:
         print("Exit")
         break
+
+
+
+##########################################
+
+class Stack:
+    def __init__(self, size):
+        
+        self.stack = []
+        self.size = size
+    
+    def is_empty(self):
+        
+        return len(self.stack) == 0
+    
+    def is_full(self):
+        
+        return len(self.stack) == self.size
+    
+    def push(self, item):
+      
+        if self.is_full():
+            print("Stack Overflow! Cannot push item.")
+        else:
+            self.stack.append(item)
+            print(f"Item {item} pushed to stack.")
+    
+    def pop(self):
+       
+        if self.is_empty():
+            print("Stack Underflow! Cannot pop item.")
+        else:
+            item = self.stack.pop()
+            print(f"Item {item} popped from stack.")
+            return item
+    
+    def peek(self):
+        
+        if self.is_empty():
+            print("Stack is empty.")
+        else:
+            return self.stack[-1]
+    
+    def display(self):
+        
+        if self.is_empty():
+            print("Stack is empty.")
+        else:
+            print("Current Stack:", self.stack)
+
+
+stack = Stack(size=5)
+
+stack.push(10)
+stack.push(20)
+stack.push(30)
+
+stack.display()
+
+stack.pop()
+
+stack.display()
+
+stack.push(40)
+stack.push(50)
+stack.push(60) 
+print("Top item is:", stack.peek())
+
+print("Is stack empty?", stack.is_empty())  
+print("Is stack full?", stack.is_full())  
+
      
