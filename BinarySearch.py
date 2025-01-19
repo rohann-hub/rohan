@@ -73,7 +73,7 @@ graph = {
 
 print("DFS:", dfs(graph, 'A'))
 
-#### Binary Search tree 
+#### Binary Search tree (bst)
 class Node:
     def __init__(self, value):
         self.value = value
