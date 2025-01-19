@@ -75,74 +75,73 @@ while True:
 
 
 ##########################################
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
 class Stack:
-    def __init__(self, size):
-        
-        self.stack = []
-        self.size = size
-    
-    def is_empty(self):
-        
-        return len(self.stack) == 0
-    
-    def is_full(self):
-        
-        return len(self.stack) == self.size
-    
-    def push(self, item):
-      
+    def __init__(self, max_size):
+        self.top = None
+        self.max_size = max_size
+        self.size = 0
+
+    def push(self, data):
         if self.is_full():
-            print("Stack Overflow! Cannot push item.")
-        else:
-            self.stack.append(item)
-            print(f"Item {item} pushed to stack.")
+            print("Stack is full. Cannot push.")
+            return
+        new_node = Node(data)
+        new_node.next = self.top
+        self.top = new_node
+        self.size += 1
+
     
     def pop(self):
-       
         if self.is_empty():
-            print("Stack Underflow! Cannot pop item.")
-        else:
-            item = self.stack.pop()
-            print(f"Item {item} popped from stack.")
-            return item
-    
+            print("Stack is empty. Cannot pop.")
+            return None
+        popped_data = self.top.data
+        self.top = self.top.next
+        self.size -= 1
+        return popped_data
+
+ 
     def peek(self):
-        
         if self.is_empty():
-            print("Stack is empty.")
-        else:
-            return self.stack[-1]
+            print("Stack is empty. Cannot peek.")
+            return None
+        return self.top.data
+
+
+    def is_full(self):
+        return self.size == self.max_size
+
+    
+    def is_empty(self):
+        return self.size == 0
+
     
     def display(self):
-        
         if self.is_empty():
             print("Stack is empty.")
-        else:
-            print("Current Stack:", self.stack)
+            return
+        current = self.top
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
 
 
-stack = Stack(size=5)
-
+stack = Stack(max_size=4)
 stack.push(10)
 stack.push(20)
 stack.push(30)
+stack.push(40)  
+stack.display()  
 
+print("popped element:",stack.pop())
+print("popped elemnt :" ,stack.pop()) 
+  
 stack.display()
 
-stack.pop()
-
-stack.display()
-
-stack.push(40)
-stack.push(50)
-stack.push(60) 
-
-stack.display()
-
-print("Top item is:", stack.peek())
-
-print("Is stack empty?", stack.is_empty())  
-print("Is stack full?", stack.is_full())  
-
-     
+print("top elemnt:",stack.peek()) 
