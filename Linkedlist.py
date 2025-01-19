@@ -1,3 +1,76 @@
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def delete(self, key):
+        temp = self.head
+        if temp and temp.data == key:
+            self.head = temp.next
+            return
+        while temp and temp.next and temp.next.data != key:
+            temp = temp.next
+        if temp and temp.next:
+            temp.next = temp.next.next
+
+    def traverse(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=' ')
+            temp = temp.next
+
+lst = LinkedList()
+lst.insert(10)
+lst.insert(20)
+lst.insert(30)
+lst.insert(40)
+lst.insert(50)
+
+print("Linked list after insertion:")
+lst.traverse()
+
+lst.delete(20)
+lst.delete(50)
+
+print("\nLinked list after deletion:")
+lst.traverse()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## SinglyLInkedlist
 
 class Node:
